@@ -1,0 +1,4 @@
+SPA's or Components of a Master Function or Object
+Loosely Coupled Parts
+
+PC stands for Pages or Components 

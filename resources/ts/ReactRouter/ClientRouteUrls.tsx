@@ -3,7 +3,7 @@ import Detail from '@/SFCR/layouts/FrontendUI/store/StoreComp/Detail'
 import CheckOutSuccess from '@/SFCR/layouts/FrontendUI/store/StoreComp/CheckOutSuccess'
 import CheckOutCancel from '@/SFCR/layouts/FrontendUI/store/StoreComp/CheckOutCancel'
 const ClientRouteUrls = [
-  { path: '/store', exact: true, name: 'StoreAppPageRoute' },
+  { path: '/store', exact: true, name: 'StoreAppPageRouteURI' },
   {
     path: '/store/categories',
     exact: true,
@@ -32,7 +32,7 @@ const ClientRouteUrls = [
     component: CheckOutCancel,
     //<Route exact path="" component={Profile} />
   },
-  { path: '/cart', exact: true, name: 'CartFeaturePageRoute' },
+
 ]
 
 export default ClientRouteUrls

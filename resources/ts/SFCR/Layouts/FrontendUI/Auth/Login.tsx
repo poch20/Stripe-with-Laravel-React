@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 // My NPM Libraries
 import Swal from 'sweetalert2'
 
-import Navbar from './../Navbar'
+
 
 function Login() {
   const history = useHistory()
@@ -77,7 +77,7 @@ function Login() {
 
   return (
     <div>
-      <Navbar />
+  
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-6">

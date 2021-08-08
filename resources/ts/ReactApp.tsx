@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
@@ -8,21 +7,19 @@ import {
 } from 'react-router-dom'
 
 // My SPA's
+import Register from '@/SFCR/layouts/FrontendUI/Auth/Register'
+import Login from '@/SFCR/layouts/FrontendUI/Auth/Login'
 
-import GlobalHomePage from '@/SFCR/layouts/FrontendUI/Welcome'
 import MasterLayout from '@/SFCR/layouts/BackendUI/MasterLayouts'
-import Register from '@/SFCR/layouts/FrontendUI/auth/Register'
-import Login from '@/SFCR/layouts/FrontendUI/auth/Login'
 import AdminPrivateRoute from '@/SFCR/layouts/BackendUI/AdminPrivateRoute'
+
 import Page403 from '@/SFCR/layouts/Error_Interceptors_State_Disp_Page/Page403'
 import Page404 from '@/SFCR/layouts/Error_Interceptors_State_Disp_Page/Page404'
 
-import { StoreWelcomes } from '@/SFCR/layouts/FrontendUI/store/StoreWelcomes'
+import ClientStartingModelRoute from './ClientStartingModelRoute'
+
+
 import CartPage from '@/SFCR/layouts/FrontendUI/cart/Cart'
-
-import CartContextProvider from './Contexts/CartContext';
-
-
 
 // import Axios and implement Rule
 import axios from 'axios'
@@ -42,21 +39,10 @@ export const ReactApp = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={GlobalHomePage} />
-          <Route
-            path="/store"
-            name="StoreAppPageRoute"
-            render={(props) => <StoreWelcomes {...props} />}
-          />
-          <Route
-            path="/cart"
-            name="CartFeaturePageRoute"
-            render={ (props) => <CartPage {...props} /> }
-          />
+          <AdminPrivateRoute path="/admin" name="AdminRoute" />
+          <ClientStartingModelRoute path="/" name="ClientSideDefaultHomePage" />
           <Route path="/403" component={Page403} />
           <Route path="/404" component={Page404} />
-          {/* <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} /> */}
           <Route path="/login">
             {localStorage.getItem('auth_token_received_from_sanctum') ? (
               <Redirect to="/" />
@@ -71,7 +57,7 @@ export const ReactApp = () => {
               <Register />
             )}
           </Route>
-          <AdminPrivateRoute path="/admin" name="AdminRoute" />
+
         </Switch>
       </Router>
     </div>
