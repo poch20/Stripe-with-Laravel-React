@@ -1,10 +1,11 @@
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Import React Router
 import PublicStatic from '@/ReactRouter/PublicStatic'
 
 import Navbar from '../Navbar'
-
+import Register from '@/SFCR/layouts/FrontendUI/Auth/Register'
+import Login from '@/SFCR/layouts/FrontendUI/Auth/Login'
 const SwitchCascadingRoutesBasedOnParent = () => {
   return (
     <div>
@@ -24,6 +25,20 @@ const SwitchCascadingRoutesBasedOnParent = () => {
               )
             )
           })}
+          <Route path="/login" name="AboutRouteURI">
+            {localStorage.getItem('auth_token_received_from_sanctum') ? (
+              <Redirect to="/" />
+            ) : (
+              <Login />
+            )}
+          </Route>
+          <Route path="/register" name="ContactRouteURI">
+            {localStorage.getItem('auth_token_received_from_sanctum') ? (
+              <Redirect to="/" />
+            ) : (
+              <Register />
+            )}
+          </Route>
         </Switch>
       </div>
     </div>

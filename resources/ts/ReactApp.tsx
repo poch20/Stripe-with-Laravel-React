@@ -7,8 +7,7 @@ import {
 } from 'react-router-dom'
 
 // My SPA's
-import Register from '@/SFCR/layouts/FrontendUI/Auth/Register'
-import Login from '@/SFCR/layouts/FrontendUI/Auth/Login'
+
 
 import MasterLayout from '@/SFCR/layouts/BackendUI/MasterLayouts'
 import AdminPrivateRoute from '@/SFCR/layouts/BackendUI/AdminPrivateRoute'
@@ -43,21 +42,6 @@ export const ReactApp = () => {
           <ClientStartingModelRoute path="/" name="ClientSideDefaultHomePage" />
           <Route path="/403" component={Page403} />
           <Route path="/404" component={Page404} />
-          <Route path="/login">
-            {localStorage.getItem('auth_token_received_from_sanctum') ? (
-              <Redirect to="/" />
-            ) : (
-              <Login />
-            )}
-          </Route>
-          <Route path="/register">
-            {localStorage.getItem('auth_token_received_from_sanctum') ? (
-              <Redirect to="/" />
-            ) : (
-              <Register />
-            )}
-          </Route>
-
         </Switch>
       </Router>
     </div>

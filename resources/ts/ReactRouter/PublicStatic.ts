@@ -12,61 +12,6 @@ import CheckOutSuccess from '@/SFCR/layouts/FrontendUI/store/StoreComp/CheckOutS
 import CheckOutCancel from '@/SFCR/layouts/FrontendUI/store/StoreComp/CheckOutCancel'
 import CartPage from '@/SFCR/layouts/FrontendUI/cart/Cart'
 
-
-const PublicTest: Array<object> = [
-  {
-    path: '/',
-    exact: true,
-    name: 'ClientSideDefaultHomePage',
-    component: HomePage,
-  },
-  {
-    path: '/about',
-    exact: true,
-    name: 'AboutRouteURI',
-    component: AboutPage,
-  },
-  {
-    path: '/contact',
-    exact: true,
-    name: 'ContactRouteURI',
-    component: ContactPage,
-  },
-  {
-    path: '/store',
-    exact: true,
-    name: 'StoreAppPageRouteURI',
-    component: StoreWelcomes,
-  },
-
-  {
-    path: '/store/product-details/:slug',
-    exact: true,
-    name: 'ProdDetailsPageUrlRoute',
-    component: Detail,
-  },
-  {
-    path: '/store/checkout-success',
-    exact: true,
-    name: 'CheckOutSuccessPageUrlRoute',
-    component: CheckOutSuccess,
-  },
-  {
-    path: '/store/checkout-cancel',
-    exact: true,
-    name: 'CheckOutCancelPageUrlRoute',
-    component: CheckOutCancel,
-  },
-
-  {
-    path: '/cart',
-    exact: true,
-    name: 'CartFeaturePageRoute',
-    component: CartPage,
-  },
-
-]
-
 const PublicStatic = [
   {
     path: '/',
@@ -74,6 +19,7 @@ const PublicStatic = [
     name: 'ClientSideDefaultHomePage',
     component: HomePage,
   },
+
   {
     path: '/about',
     exact: true,
