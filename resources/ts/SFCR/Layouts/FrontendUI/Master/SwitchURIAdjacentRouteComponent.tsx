@@ -1,5 +1,4 @@
-import React from 'react'
-import { Switch, Route, Redirect, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 // Import React Router
 import PublicStatic from '@/ReactRouter/PublicStatic'
@@ -20,9 +19,7 @@ const SwitchCascadingRoutesBasedOnParent = () => {
                   path={arrItems.path}
                   exact={arrItems.exact}
                   name={arrItems.name}
-                  render={
-                    (props) => <arrItems.component {...props} />
-                  }
+                  render={(props) => <arrItems.component {...props} />}
                 />
               )
             )
